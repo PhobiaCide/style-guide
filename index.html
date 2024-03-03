@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="path/to/halfmoon.min.css" />
     <title>Style Guide</title>
     <!-- Halfmoon CSS -->
     <link
@@ -21,11 +20,19 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css"
+      integrity="sha512-3axCmtM0Aq1Zin8EQ/BgsaYCdR9jY488aH7JYG4zTUeEHWGqOjm86hjL4cx6nIWGLMJ/UU4m+MOcQ2D/f2QdfQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-desktop-dark.min.css"
       integrity="sha512-Cwdrdy7iqIj7n5XjgDqvpCOO4aztpoIISOcabdx5igD8Z51YuOWa8BBbI8+2oOI6Rf77xMZ1vAlXvGn6jc6O5Q=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link rel="stylesheet" href="./css/topcoat-popover.css" />
     <link rel="stylesheet" href="./css/topcoat-select.css" />
     <link rel="stylesheet" href="./css/topcoat-breadcrumb.css" />
@@ -36,10 +43,63 @@
     <header
       class="jumbotron text-center fixed-top bg-secondary bg-gradient border border-success border-5 border-top-0 border-start-0 border-end-0 rounded-5 rounded-start-0 rounded-top-0 w-lg-25 w-md-50 w-sm-75"
     >
-      <h1 class="display-2">Style Guide</h1>
+      <h1 class="">Style Guide</h1>
       <small class="text-muted">A collection of UI elements</small>
+      <section class="d-block text-start topcoat-button-bar btn-group">
+        <nav
+          class="btn-group mx-auto"
+          aria-controls="table-of-contents"
+          aria-label="Table of Contents"
+        >
+          <input
+            type="button"
+            class="btn btn-success topcoat-button--large"
+            value="Contents"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#table-of-contents"
+          />
+        </nav>
+
+        <span class="dropdown">
+          <input
+            class="btn btn-primary topcoat-button--large dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style="filter: saturate(0)"
+            value="Button🔽"
+          />
+          <ul class="dropdown-menu">
+            <li>
+              <input
+                type="button"
+                aria-current="false"
+                class="dropdown-item btn btn-success topcoat-button--large"
+                value="Light Mode"
+              />
+            </li>
+            <li>
+              <input
+                disabled
+                type="button"
+                aria-current="false"
+                class="dropdown-item btn btn-success topcoat-button--large"
+                value="Dark Mode"
+              />
+            </li>
+          </ul>
+        </span>
+      </section>
     </header>
     <br />
+    <!-- Offcanvas -->
+    <aside
+      class="offcanvas offcanvas-start w-50 bg-light"
+      style="overflow-y: auto"
+      tabindex="-1"
+      id="table-of-contents"
+      aria-labelledby="table-of-contents-title"
+    ></aside>
     <br />
     <main
       class="container bg-body text-body rounded-5 border border-secondary px-5 my-5"
@@ -156,7 +216,7 @@
       </article>
 
       <!--Buttons-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2 class="text-center">Buttons</h2>
         </header>
@@ -298,7 +358,7 @@
             />
           </span>
         </fieldset>
-      </section>
+      </article>
 
       <!--Alerts-->
       <article class="container p-4 mt-5">
@@ -368,11 +428,11 @@
           >
             <button
               type="button"
-              class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
+              class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50 me-1 my-3"
               data-dismiss="alert"
               aria-label="Close"
             >
-              <span aria-hidden="true">❌</span>
+              <span aria-hidden="true" class="">❌</span>
             </button>
             <figcaption
               class="bg-body border border-success border-end-0 border-top-0 border-start-0 text-success p-2 px-3 rounded-pill rounded-end-0"
@@ -623,7 +683,7 @@
       </article>
 
       <!--Navigation-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Navigation</h2>
         </header>
@@ -783,10 +843,10 @@
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </div>
-      </section>
+      </article>
 
       <!--Cards-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Cards</h2>
         </header>
@@ -826,7 +886,7 @@
           </div>
           <div class="card-footer">Footer content</div>
         </div>
-      </section>
+      </article>
 
       <!--Tables-->
       <article class="container p-4 mt-5">
@@ -945,7 +1005,7 @@
       </article>
 
       <!--Modals-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Modals</h2>
         </header>
@@ -1141,10 +1201,10 @@
             </div>
           </aside>
         </fieldset>
-      </section>
+      </article>
 
       <!--Tooltips and Popovers-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Tooltips and popovers</h2>
         </header>
@@ -1183,7 +1243,7 @@
         >
           Click me for a Popover
         </button>
-      </section>
+      </article>
 
       <!--Progress Bars-->
       <article class="container p-4 mt-5">
@@ -1272,7 +1332,7 @@
       </article>
 
       <!--Icons-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Icons</h2>
         </header>
@@ -1296,10 +1356,10 @@
           <span class="custom-icon"></span>
           <!-- Example custom icon -->
         </p>
-      </section>
+      </article>
 
       <!--Badges and Labels-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Badges and Labels</h2>
         </header>
@@ -1335,10 +1395,10 @@
           <!-- Label for Information -->
           <span class="label label-info"><sub>Information</sub></span>
         </fieldset>
-      </section>
+      </article>
 
       <!--Accordion and Collapse-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Accordion and Collapse</h2>
         </header>
@@ -1457,10 +1517,10 @@
             </div>
           </div>
         </fieldset>
-      </section>
+      </article>
 
       <!--Media Objects-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Media Objects</h2>
         </header>
@@ -1484,10 +1544,10 @@
             title="Your Video"
           ></iframe>
         </div>
-      </section>
+      </article>
 
       <!--Tabs and Pills-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Tabs And Pills</h2>
         </header>
@@ -1585,10 +1645,10 @@
         </section>
 
         <!-- ... (Include other UI elements as needed) -->
-      </section>
+      </article>
 
       <!--Carousel-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Basic Image Carousel</h2>
         </header>
@@ -1601,7 +1661,7 @@
           <figcaption class="sr-only card-header">
             <h4 class="card-title text-center">Carousel Title</h4>
           </figcaption>
-          <ul class="carousel-inner p-0 m-0" style="list-style: none">
+          <ul class="carousel-inner p-0 m-0 border" style="list-style: none">
             <li class="carousel-item active">
               <img
                 src="image1.jpg"
@@ -1630,38 +1690,45 @@
               />
             </li>
           </ul>
-          <!-- Add more items as needed -->
-          <nav class="d-block" aria-label="Carousel Navigation">
-            <a
-              class="carousel-control-prev"
-              href="#imageCarousel"
-              role="button"
-              data-slide="prev"
+          <footer class="card-footer text-center">
+            <!-- Add more items as needed -->
+            <nav
+              class="d-block topcoat-button-bar btn-group"
+              aria-label="Carousel Navigation"
             >
-              <span
-                class="btn btn-outline-secondary topcoat-button--quiet carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="sr-only">Prev</span>
-            </a>
-            <a
-              class="carousel-control-next"
-              href="#imageCarousel"
-              role="button"
-              data-slide="next"
-            >
-              <span class="sr-only">Next</span>
-              <span
-                class="btn btn-outline-secondary topcoat-button--quiet carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-            </a>
-          </nav>
+              <a
+                class="d-inline-block carousel-control-prev topcoat-button--quiet rounded-start-pill border border-secondary border-end-0 border-top-0 border-bottom-0"
+                href="#imageCarousel"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon btn rounded-circle border-secondary border-end-0"
+                  style="transform: scale(2)"
+                  aria-hidden="true"
+                ></span>
+                <h3 class="sr-only ms-4 d-inline">Prev</h3>
+              </a>
+              <a
+                class="d-inline-block carousel-control-next topcoat-button--quiet rounded-end-pill border border-secondary border-end-0 border-top-0 border-bottom-0"
+                href="#imageCarousel"
+                role="button"
+                data-slide="next"
+              >
+                <h3 class="sr-only me-4 d-inline">Next</h3>
+                <span
+                  class="carousel-control-next-icon btn rounded-circle border-secondary border-start-0"
+                  style="transform: scale(2)"
+                  aria-hidden="true"
+                ></span>
+              </a>
+            </nav>
+          </footer>
         </figure>
-      </section>
+      </article>
 
       <!--Panels and Panels with Navigation-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Panels</h2>
         </header>
@@ -1697,10 +1764,10 @@
             </p>
           </div>
         </div>
-      </section>
+      </article>
 
       <!--Dropdowns-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Dropdowns</h2>
         </header>
@@ -1764,10 +1831,10 @@
             </ul>
           </div>
         </nav>
-      </section>
+      </article>
 
       <!--Spinners and Loaders-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Spinners And Loaders</h2>
         </header>
@@ -1776,10 +1843,10 @@
           <div class="spinner-border" role="status"></div>
           <figcaption class="sr-only">Loading...</figcaption>
         </figure>
-      </section>
+      </article>
 
       <!--Chips-->
-      <section class="container p-4 mt-5">
+      <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2>Chips</h2>
         </header>
@@ -1789,11 +1856,24 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-      </section>
+      </article>
     </main>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"
+      integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="./js/activate.js"></script>
     <script src="./js/generateTOC.js"></script>
