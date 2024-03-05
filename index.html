@@ -41,7 +41,7 @@
 
   <body class="container-fluid bg-gradient">
     <header
-      class="jumbotron text-center fixed-top bg-secondary bg-gradient border border-success border-5 border-top-0 border-start-0 border-end-0 rounded-5 rounded-start-0 rounded-top-0 w-lg-25 w-md-50 w-sm-75"
+      class="jumbotron text-center fixed-top bg-secondary bg-gradient border border-success border-5 border-top-0 border-start-0 border-end-0 rounded-bottom-pill rounded-start-0 w-lg-25 w-md-50 w-sm-75"
     >
       <h1 class="">Style Guide</h1>
       <small class="text-muted">A collection of UI elements</small>
@@ -53,42 +53,46 @@
         >
           <input
             type="button"
-            class="btn btn-success topcoat-button--large"
+            class="btn btn-outline-success topcoat-button--large"
             value="Contents"
             data-bs-toggle="offcanvas"
             data-bs-target="#table-of-contents"
           />
-        </nav>
-
-        <span class="dropdown">
+        
+        <nav class="dropdown" aria-label="Dropdown Menu">
           <input
-            class="btn btn-primary topcoat-button--large dropdown-toggle"
+            class="btn btn-outline-success topcoat-button--large dropdown-toggle"
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             style="filter: saturate(0)"
-            value="Button🔽"
+            value="Mode🔽"
           />
-          <ul class="dropdown-menu">
-            <li>
+          <ul class="dropdown-menu topcoat-list-container">
+            <li class="topcoat-list__item">
               <input
+                id="light-toggle"
                 type="button"
                 aria-current="false"
-                class="dropdown-item btn btn-success topcoat-button--large"
+                class="btn btn-outline-success dropdown-item topcoat-button--large"
                 value="Light Mode"
+                onclick="switchTheme(this, 'light')"
               />
             </li>
-            <li>
+            <li class="topcoat-list__item">
               <input
                 disabled
+                id="dark-toggle"
                 type="button"
                 aria-current="false"
                 class="dropdown-item btn btn-success topcoat-button--large"
                 value="Dark Mode"
+                onclick="switchTheme(this, 'dark')"
               />
             </li>
           </ul>
-        </span>
+        </n>
+        </nav>
       </section>
     </header>
     <br />
@@ -341,13 +345,13 @@
             <!-- Large, Small, and Regular Sizes -->
             <input
               type="button"
-              class="btn btn-outline-secondary topcoat-button--large btn-lg"
+              class="btn btn-outline-secondary topcoat-button--large"
               value="Large Button"
             />
 
             <input
               type="button"
-              class="btn btn-outline-primary topcoat-button--quiet btn-sm"
+              class="btn btn-outline-primary topcoat-button--quiet"
               value="Quiet Button"
             />
 
@@ -428,7 +432,7 @@
           >
             <button
               type="button"
-              class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50 me-1 my-3"
+              class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
               data-dismiss="alert"
               aria-label="Close"
             >
@@ -517,6 +521,7 @@
               <input
                 type="text"
                 id="inputField"
+                placeholder="Placeholder - Enter text here..."
                 class="topcoat-text-input form-control"
               />
             </span>
@@ -708,7 +713,7 @@
             <ul class="navbar-nav">
               <li class="nav-item active">
                 <a class="nav-link" href="#"
-                  >Home <span class="sr-only">(current)</span></a
+                  >Home<span class="sr-only">(current)</span></a
                 >
               </li>
               <li class="nav-item">
@@ -1874,8 +1879,21 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
-
+    <script>
+      function switchTheme(e, mode) {
+        const antiMode = mode === "light" ? "dark" : "light";
+        if (mode === "light" || mode === "dark") {
+          document.documentElement.setAttribute("data-bs-theme", mode);
+          localStorage.setItem("mode", mode);
+          e.setAttribute("disabled", "true");
+          document
+            .getElementById(`${antiMode}-toggle`)
+            .removeAttribute("disabled");
+        }
+      }
+    </script>
     <script src="./js/activate.js"></script>
-    <script src="./js/generateTOC.js"></script>
+    <script src="./js/generate-table-of-contents.js"></script>
+    <script src="./js/theme-switcher.js"></script>
   </body>
 </html>
