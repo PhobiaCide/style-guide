@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark" data-bs-core="modern">
+<html lang="en" data-bs-core="modern">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,129 +39,105 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
-  <body class="container-fluid bg-gradient">
+  <body id="body" class="container-fluid bg-gradient" data-bs-theme="dark">
     <header
-      class="jumbotron text-center fixed-top bg-secondary bg-gradient border border-success border-5 border-top-0 border-start-0 border-end-0 rounded-bottom-pill rounded-start-0 w-lg-25 w-md-50 w-sm-75"
+      class="d-block jumbotron text-start fixed-top"
     >
-      <h1 class="">Style Guide</h1>
-      <small class="text-muted">A collection of UI elements</small>
-      <section class="d-block text-start topcoat-button-bar btn-group">
-        <nav
-          class="btn-group mx-auto"
-          aria-controls="table-of-contents"
-          aria-label="Table of Contents"
-        >
+      <figure class="bg-secondary bg-gradient float-start border border-success border-5 border-top-0 border-start-0 border-end-0 rounded-bottom-pill rounded-start-0 w-50 w-lg-25 w-md-25 w-sm-50 ps-5">
+        <h1 class="">Style Guide</h1>
+        <small class="text-muted">A collection of UI elements</small>
+      </figure>
+
+      <nav class="float-end rounded-bottom-pill" aria-label="Toolbar">
+        <span class="topcoat-button-bar btn-group rounded-start-pill">
           <input
+            aria-controls="body"
+            id="mode-toggle"
             type="button"
-            class="btn btn-outline-success topcoat-button--large"
+            aria-current="false"
+            class="btn btn-primary bg-light text-dark border border-dark border-5 border-top-0 border-start-0 border-end-0"
+            value="Light Mode"
+            onclick="toggleMode(this)"
+          />
+          <input
+            aria-controls="table-of-contents"
+            type="button"
+            class="btn btn-success border border-primary border-5 border-top-0 border-start-0 border-end-0"
             value="Contents"
             data-bs-toggle="offcanvas"
             data-bs-target="#table-of-contents"
           />
-        
-        <nav class="dropdown" aria-label="Dropdown Menu">
-          <input
-            class="btn btn-outline-success topcoat-button--large dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            style="filter: saturate(0)"
-            value="Mode🔽"
-          />
-          <ul class="dropdown-menu topcoat-list-container">
-            <li class="topcoat-list__item">
-              <input
-                id="light-toggle"
-                type="button"
-                aria-current="false"
-                class="btn btn-outline-success dropdown-item topcoat-button--large"
-                value="Light Mode"
-                onclick="switchTheme(this, 'light')"
-              />
-            </li>
-            <li class="topcoat-list__item">
-              <input
-                disabled
-                id="dark-toggle"
-                type="button"
-                aria-current="false"
-                class="dropdown-item btn btn-success topcoat-button--large"
-                value="Dark Mode"
-                onclick="switchTheme(this, 'dark')"
-              />
-            </li>
-          </ul>
-        </n>
-        </nav>
-      </section>
+        </span>
+      </nav>
     </header>
     <br />
     <!-- Offcanvas -->
     <aside
-      class="offcanvas offcanvas-start w-50 bg-light"
+      class="offcanvas offcanvas-start w-lg-25 w-md-50 w-sm-75"
       style="overflow-y: auto"
       tabindex="-1"
       id="table-of-contents"
       aria-labelledby="table-of-contents-title"
     ></aside>
-    <br />
     <main
-      class="container bg-body text-body rounded-5 border border-secondary px-5 my-5"
+      class="container bg-body text-body rounded-5 border border-secondary px-1 my-1"
     >
       <!--Typography-->
       <article class="container p-4 mt-5">
         <header class="border-bottom my-5">
           <h2 class="text-center">Typography</h2>
         </header>
-        <section class="d-block">
-          <figure
-            class="float-end card border border-info w-lg-25 w-md-50 w-sm-75"
-          >
-            <header class="card-header py-2 mb-2">
-              <h3 class="card-title py-1 my-1">Demo</h3>
-            </header>
-            <figcaption>
-              <header class="p-3">
-                <h4>Heading</h4>
-                <small class="text-muted">Subtitle</small>
-              </header>
-              <p class="p-3">Content</p>
-            </figcaption>
-          </figure>
-          <p>
-            In this section, we explore the typography and font choices that
-            contribute to the visual style of the application.
-          </p>
-          <h3>Font Selection</h3>
-          <dl>
-            <dt>Headings(h1, h2, h3, h4, h5, h6 tags)</dt>
-            <dd>Fragma Medium</dd>
-            <dt>Subtitles(header tags)</dt>
-            <dd>Eve Sans Neue Condensed</dd>
-            <dt>Content</dt>
-            <dd>Eve Sans Neue Expanded</dd>
-          </dl>
+        <section class="card shadow m-3">
+          <header class="card-header">
+            <h3 class="card-title p-1 my-1">Font Selection</h3>
+          </header>
+          <span class="p-5">
+            <p>
+              In this section, we explore the typography and font choices that
+              contribute to the visual style of the application.
+            </p>
 
-          <h3>Main Heading</h3>
-          <p>
-            The main heading of our application uses a bold and modern font to
-            make a strong visual impact. It sets the tone for the entire user
-            interface.
-          </p>
-          <h3>Body Text</h3>
-          <p>
-            The body text is presented in a clean and readable font. It ensures
-            a comfortable reading experience for users interacting with
-            different sections of our application.
-          </p>
-          <h3>Special Emphasis</h3>
-          <p>
-            For special emphasis, such as highlighting important information or
-            calls to action, we use a distinctive font style to draw the user's
-            attention.
-          </p>
+            <dl class="w-100 border">
+              <dt class="w-25">Headings(h1, h2, h3, h4, h5, h6 tags)</dt>
+              <dd class="w-75">Fragma Medium</dd>
+              <dt class="w-25">Content</dt>
+              <dd class="w-75">Eve Sans Neue Expanded</dd>
+              <dt class="w-25">Special Emphasis</dt>
+              <dd class="w-75">Eve Sans Neue Condensed</dd>
+            </dl>
+
+            <h3>Headings</h3>
+            <p>
+              The main heading of our application uses a bold and modern font to
+              make a strong visual impact. It sets the tone for the entire user
+              interface.
+            </p>
+            <p class="text-center fragma">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':,.&lt;&gt;?/
+            </p>
+
+            <h3>Body Text</h3>
+            <p>
+              The body text is presented in a clean and readable font. It
+              ensures a comfortable reading experience for users interacting
+              with different sections of our application.
+            </p>
+            <p class="text-center eve-sans-neue-expanded">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':,.&lt;&gt;?/
+            </p>
+
+            <h3>Special Emphasis</h3>
+            <p class="text-center eve-sans-neue-condensed">
+              For special emphasis, such as highlighting important information
+              or calls to action, we use a distinctive font style to draw the
+              user's attention.
+            </p>
+            <p>
+              ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;':,.&lt;&gt;?/
+            </p>
+          </span>
         </section>
-        <section>
+        <section class="card shadow m-3">
           <figure class="p-3 m-3">
             <header class="py-2 my-2 mb-5">
               <h3 class="p-1 my-1">Headings</h3>
@@ -181,7 +157,7 @@
             </figcaption>
           </figure>
         </section>
-        <fieldset class="p-3 m-3">
+        <section class="card shadow m-3">
           <legend class="py-2 my-2 mb-5">
             <h3 class="p-1 my-1">Paragraphs</h3>
           </legend>
@@ -189,8 +165,8 @@
             This is a paragraph of text. It can contain multiple lines and cover
             various topics.
           </p>
-        </fieldset>
-        <fieldset class="p-3 m-3">
+        </section>
+        <section class="card shadow m-3">
           <legend class="py-2 my-2 mb-5">
             <h3 class="p-1 my-1">Blockquote</h3>
           </legend>
@@ -198,8 +174,8 @@
             This is a blockquote. It's a great way to emphasize a portion of
             text.
           </blockquote>
-        </fieldset>
-        <fieldset class="p-3 m-3">
+        </section>
+        <section class="card shadow m-3">
           <legend>
             <h3 class="text-center">Lists</h3>
           </legend>
@@ -216,7 +192,7 @@
             <li class="topcoat-list__item">Item B</li>
             <li class="topcoat-list__item">Item C</li>
           </ul>
-        </fieldset>
+        </section>
       </article>
 
       <!--Buttons-->
@@ -421,11 +397,12 @@
             </figcaption>
           </figure>
         </section>
+        <!-- Dismissible Alerts -->
         <section class="p-3 mt-3">
           <header class="py-2 my-2 mb-5">
             <h3 class="p-1 my-1">Dismissible Alerts</h3>
           </header>
-          <!-- Dismissible Alerts -->
+
           <figure
             class="alert alert-success alert-dismissible fade show bg-gradient text-center border border-success border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
             role="alert"
@@ -433,7 +410,7 @@
             <button
               type="button"
               class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
-              data-dismiss="alert"
+              data-bs-dismiss="alert"
               aria-label="Close"
             >
               <span aria-hidden="true" class="">❌</span>
@@ -452,7 +429,7 @@
             <button
               type="button"
               class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
-              data-dismiss="alert"
+              data-bs-dismiss="alert"
               aria-label="Close"
             >
               <span aria-hidden="true">❌</span>
@@ -471,7 +448,7 @@
             <button
               type="button"
               class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
-              data-dismiss="alert"
+              data-bs-dismiss="alert"
               aria-label="Close"
             >
               <span aria-hidden="true">❌</span>
@@ -484,13 +461,13 @@
           </figure>
 
           <figure
-            class="alert alert-danger alert-dismissible fade show bg-gradient text-center border border-danger border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
+            class="float-end alert alert-danger alert-dismissible fade show bg-gradient text-center border border-danger border-2 border-end-0 border-bottom-0 border-start-0 rounded-start-pill rounded-end-0 w-xl-50 w-lg-50 w-md-75 w-sm-100 pb-1 pt-4 ps-2 pe-0 ms-auto"
             role="alert"
           >
             <button
               type="button"
               class="btn btn-outline-danger topcoat-button close float-end bg-danger bg-opacity-50"
-              data-dismiss="alert"
+              data-bs-dismiss="alert"
               aria-label="Close"
             >
               <span aria-hidden="true">❌</span>
@@ -1879,19 +1856,7 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"
     ></script>
-    <script>
-      function switchTheme(e, mode) {
-        const antiMode = mode === "light" ? "dark" : "light";
-        if (mode === "light" || mode === "dark") {
-          document.documentElement.setAttribute("data-bs-theme", mode);
-          localStorage.setItem("mode", mode);
-          e.setAttribute("disabled", "true");
-          document
-            .getElementById(`${antiMode}-toggle`)
-            .removeAttribute("disabled");
-        }
-      }
-    </script>
+    <script src="./js/mode-switcher.js"></script>
     <script src="./js/activate.js"></script>
     <script src="./js/generate-table-of-contents.js"></script>
     <script src="./js/theme-switcher.js"></script>
