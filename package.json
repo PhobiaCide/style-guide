@@ -1,0 +1,19 @@
+{
+  "name": "style-guide",
+  "version": "0.0.3",
+  "description": "A style guide for future Incomplete Infinity projects",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhobiaCide/style-guide.git"
+  },
+  "author": "PhobiaCide",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhobiaCide/style-guide/issues"
+  },
+  "homepage": "https://github.com/PhobiaCide/style-guide#readme"
+}
