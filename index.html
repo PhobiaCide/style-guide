@@ -9,21 +9,6 @@
       ]><link rel="stylesheet" href="css/sg-style-old-ie.css"
     /><![endif]-->
 
-    <!-- Halfmoon CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css"
-      rel="stylesheet"
-      integrity="sha256-SsJizWSIG9JT9Qxbiy8xnYJfjCAkhEQ0hihxRn7jt2M="
-      crossorigin="anonymous"
-    />
-    <!-- Halfmoon core themes -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/cores/halfmoon.cores.css"
-      rel="stylesheet"
-      integrity="sha256-MAzAVJMU/ze52ZHcA8CeqRrCOVndMZlHwNeS2c73vP4="
-      crossorigin="anonymous"
-    />
-
     <!-- Topcoat UI Styles -->
     <link
       disabled
@@ -49,28 +34,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-light.min.css"
     />
-
-    <!-- https://github.com/sindresorhus/github-markdown-css -->
-    <link rel="stylesheet" href="./src/css/github-markdown.css" />
-
-    <!-- Replace below stylesheet with your own stylesheet -->
-
-    <link rel="stylesheet" href="./src/css/sg-style.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
-
-    <!-- prism Syntax Highlighting Styles -->
-    <link rel="stylesheet" href="./src/vendor/prism/prism.css" />
-
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css"
-    />
-
-    <link rel="stylesheet" href="./src/vendor/topcoat/topcoat-breadcrumb.css" />
-    <link rel="stylesheet" href="./src/vendor/topcoat/topcoat-popover.css" />
-    <link rel="stylesheet" href="./src/vendor/topcoat/topcoat-select.css" />
   </head>
-
   <body
     data-bs-theme="dark"
     data-bs-core="modern"
@@ -84,19 +49,19 @@
       <div class="container-fluid row">
         <svg
           id="animated-logo"
-          class="col-2"
-          viewBox="0 0 360 200"
+          class="col-3 p-0 rounded-pill"
+          viewBox="0 0 400 200"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <!-- Glowing cyan tail -->
-            <!--<linearGradient id="glowGradient" x1="1" y1="0" x2="0" y2="0">
-              <stop offset="0%" stop-color="cyan" stop-opacity="0.9" />
+            <linearGradient id="glowGradient" x1="1" y1="0" x2="0" y2="0">
+              <stop offset="0%" stop-color="cyan" stop-opacity="0.2" />
               <stop offset="25%" stop-color="teal" stop-opacity="1" />
-              <stop offset="50%" stop-color="cyan" stop-opacity="0.9" />
+              <stop offset="50%" stop-color="cyan" stop-opacity="0.5" />
               <stop offset="75%" stop-color="teal" stop-opacity="1" />
-              <stop offset="100%" stop-color="cyan" stop-opacity="0.9" />
-            </linearGradient>-->
+              <stop offset="100%" stop-color="cyan" stop-opacity="0.2" />
+            </linearGradient>
 
             <radialgradient id="glowGradient" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stop-color="teal" stop-opacity="0.6" />
@@ -152,31 +117,31 @@
             />
           </path>
         </svg>
-        <h1 class="sg-logo col-4">
-          <span class="d-inline-block sg-logo-initials">
+        <hgroup class="sg-logo col-6 text-center p-0">
+          <h1 class="d-inline-block sg-logo-initials">
             <em>Incomplete&nbsp;Infinity</em>
             <span class="sg-logo-full">Style&nbsp;Guide</span>
-          </span>
-        </h1>
-        <button type="button" class="col-1 sg-nav-toggle btn topcoat-button">
+          </h1>
+        </hgroup>
+        <button type="button" class="d-none col-1 sg-nav-toggle btn topcoat-button">
           Menu
         </button>
 
         <nav class="col-3 m-0 p-0 ms-auto" aria-label="Toolbar">
-          <span class="topcoat-button-bar btn-group">
+          <span class="topcoat-button-bar btn-group float-end p-3">
             <input
               aria-controls="body"
               id="mode-toggle"
               type="button"
               aria-current="false"
-              class="btn btn-dark text-bg-light topcoat-button"
+              class="btn btn-dark text-bg-light topcoat-button rounded"
               value="Light Mode"
               onclick="toggleMode(this)"
             />
             <input
               aria-controls="table-of-contents"
               type="button"
-              class="btn btn-success text-bg-success topcoat-button"
+              class="d-none btn btn-success text-bg-success topcoat-button"
               value="Contents"
               data-bs-toggle="offcanvas"
               data-bs-target="#table-of-contents"

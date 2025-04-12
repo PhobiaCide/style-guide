@@ -1,3 +1,18 @@
+@import url('./sg-style.css');
+@import url('./styles.css');
+
+@import url("./src/vendor/topcoat/topcoat-breadcrumb.css");
+@import url("./src/vendor/topcoat/topcoat-popover.css");
+@import url("./src/vendor/topcoat/topcoat-select.css");
+
+@import url('./src/vendor/prism/prism.css');
+@import url('./src/css/github-markdown.css');
+
+@import url('https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/halfmoon.min.css');
+@import url('https://cdn.jsdelivr.net/npm/halfmoon@2.0.1/css/cores/halfmoon.cores.css');
+
+@import url('https://unpkg.com/augmented-ui@2/augmented-ui.min.css');
+
 /* Base
 -------------------------------------------------------------- */
 body {
@@ -876,9 +891,9 @@ blockquote p {
 }
 svg {
   background: radial-gradient(circle at center, #99999933 0%, #99999900 100%);
-  overflow: visible;
-  width: 64px;
-  height: 64px;
+  overflow: hidden;
+  width: 128px !important;
+  height: 128px !important;
   background-blend-mode: screen;
 }
 #animated-logo {
